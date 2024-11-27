@@ -1,52 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>France Companies by Region</title>
+    <title>Liste des Startups et Entreprises en France</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0056b3;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         #map-container {
-            width: 100%;
-            height: auto;
+            width: 90%;
+            max-width: 1000px;
             position: relative;
+            margin-top: 20px;
         }
 
         #map-image {
             width: 100%;
             height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        #company-info {
-            padding: 20px;
-            background-color: #f4f4f4;
+        .location-icon {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 200px;
-            border-top: 2px solid #ccc;
-            overflow-y: auto;
+            font-size: 1.9rem; /* Font size for the emoji */
+            cursor: pointer;
+            text-decoration: none;
+            transform: translate(-50%, -50%); /* Keeps the center alignment */
+            background-color: transparent; /* No background color */
+            border: none; /* No border */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10; /* Ensures the icon is above any potential background */
+        }
+
+        .location-icon::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; /* Fine-tuned to center the tip of the icon in the circle */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px; /* Adjusted circle size for better visibility */
+            height: 12px; /* Adjusted circle size for better visibility */
+            background-color: #0056b3; /* Blue color for the circle */
+            border-radius: 50%; /* Circle shape */
+            z-index: -1; /* Keeps the bulb behind the icon */
+            box-shadow: 0 0 20px rgba(0, 86, 179, 1); /* Stronger and more visible glow */
+            transition: box-shadow 0.3s ease;
+        }
+
+        .location-icon:hover::after {
+            box-shadow: 0 0 30px rgba(0, 86, 179, 1); /* Stronger glow on hover */
+        }
+
+        footer {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 600px; /* Smaller width for the team section */
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-direction: column; /* Ensure stacked layout */
+        }
+
+        footer h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #0056b3;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        footer ul li {
+            font-size: 1rem;
+            margin: 5px 0;
+            font-weight: bold; /* Make names bold */
+        }
+
+        /* Aesthetic styling for map area */
+        .map-description {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
-<div id="map-container">
+<header>
+    <h1>Liste des Startups et Entreprises en France</h1>
+    <p>
+        La France est reconnue comme l'un des principaux hubs pour les startups et les entreprises innovantes en Europe. 
+        Les régions françaises, y compris l'Île-de-France, sont célèbres pour leur contribution exceptionnelle à l'innovation 
+        technologique, au développement durable et aux solutions créatives. Explorez les différentes entreprises et startups 
+        prospères à travers cette carte interactive. Cliquez sur les icônes pour en savoir plus sur les entreprises dans chaque région.
+    </p>
+</header>
 
-    <!-- Define clickable areas for each region -->
-    <img src="https://i.pinimg.com/736x/1f/78/02/1f780221eacec98e90d5dc2d0f476ce0.jpg" usemap="#france-map">
-
-    <map name="france-map">
-        <!-- Updated the link to open the second HTML file -->
-        <area target="_blank" alt="CapGemini" title="CapGemini" coords="409,349,39" href="capgemini.html" shape="circle">
-    </map>
-</div>
+<main>
+    <section id="map-container">
+        <!-- Map image with image map -->
+        <img id="map-image" src="https://i.pinimg.com/736x/1f/78/02/1f780221eacec98e90d5dc2d0f476ce0.jpg" alt="Carte des régions françaises" usemap="#image-map">
+        
+        <!-- Location symbol for Île-de-France -->
+        <a href="capgemini.html" target="_blank" class="location-icon" id="iledefrance-icon" title="CapGemini" style="left: 58%; top: 31.9%;">📍</a>
+        
+        <!-- Location symbol for Ankama -->
+        <a href="ankama.html" target="_blank" class="location-icon" id="ankama-icon" title="Ankama" style="left: 59.3%; top: 19%;">📍</a>
+        
+        <p class="map-description">Cliquez sur les symboles pour en savoir plus sur les entreprises.</p>
+    </section>
+    
+    <footer>
+        <div>
+            <h2>Équipe</h2>
+            <ul>
+                <li>Aditi Ethiraj</li>
+                <li>Nandhini R</li>
+                <li>Janani R</li>
+                <li>Nehal Agarwal</li>
+                <li>Ayoshri Dutta</li>
+                <li>Saundarya Singh</li>
+            </ul>
+        </div>
+    </footer>
+</main>
 
 </body>
 </html>
