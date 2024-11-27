@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Startups et Entreprises en France</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            background: linear-gradient(to bottom, #0055A4, #F1C9D2);
+        }
+
+        /* New Header for France et Technologie */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #D32F2F;  /* Red aesthetic */
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Main Section Styling */
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Blue Box for Text Content */
+        .blue-box {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            width: 80%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .blue-box:hover {
+            box-shadow: 0 0 20px rgba(0, 86, 179, 1);
+        }
+
+        /* Textbox content styling */
+        .content-box {
+            background-color: white;
+            color: #0056b3;
+            padding: 20px;
+            width: 80%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Initially hidden */
+        }
+
+        .content-box img {
+            float: right;
+            margin-left: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-description {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        footer h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #0056b3;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        footer ul li {
+            font-size: 1rem;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        /* Aesthetic for map section */
+        .hidden-map {
+            display: none;
+        }
+
+        /* Glow effect */
+        .blue-box, .content-box {
+            transition: box-shadow 0.3s ease;
+        }
+
+        .blue-box:hover, .content-box:hover {
+            box-shadow: 0 0 20px rgba(0, 86, 179, 1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>France et Technologie</h1>
+    <p>
+        La France est un leader mondial en matière d'innovation technologique. Explorez les entreprises et les startups qui ont transformé le paysage technologique mondial.
+    </p>
+</header>
+
+<main>
+    <!-- Blue Box for History of French Innovations -->
+    <section class="blue-box" onclick="toggleTextBox(0)">
+        <h2>Histoire des Innovations Françaises</h2>
+    </section>
+
+    <!-- Blue Box for History of Video Games in France -->
+    <section class="blue-box" onclick="toggleTextBox(1)">
+        <h2>Histoire des Jeux Vidéo en France</h2>
+    </section>
+
+    <!-- Blue Box for List of Startups -->
+    <section class="blue-box" onclick="toggleTextBox(2)">
+        <h2>Liste des Startups Françaises</h2>
+    </section>
+
+    <!-- Content Box for History of French Innovations -->
+    <section id="content-0" class="content-box">
+        <h3>Les Grandes Innovations Françaises</h3>
+        <p>
+            La France a été un pionnier dans de nombreux domaines scientifiques et technologiques. Des inventions telles que le moteur à explosion de l'ingénieur français Eugène Bréguet ont marqué l'histoire, tout comme l'exploration spatiale menée par des entreprises comme Airbus.
+        </p>
+        <img src="https://www.airbus.com/sites/g/files/jlcbta136/files/styles/social_share_image/public/2023-02/Airbus-Aircraft-Aircraft.png?itok=aX2QZ7Qm" alt="Airbus" width="300">
+    </section>
+
+    <!-- Content Box for History of Video Games in France -->
+    <section id="content-1" class="content-box">
+        <h3>L'Histoire des Jeux Vidéo en France</h3>
+        <p>
+            La France a joué un rôle clé dans l'industrie du jeu vidéo. Des entreprises comme Ubisoft ont créé des franchises mondialement connues, tandis que l'histoire des jeux vidéo en France remonte à des années 1980 avec des pionniers comme le studio Infogrames.
+        </p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Ubisoft_logo_2017.svg/800px-Ubisoft_logo_2017.svg.png" alt="Ubisoft" width="200">
+    </section>
+
+    <!-- Content Box for List of French Startups -->
+    <section id="content-2" class="content-box">
+        <h3>Liste des Startups en France</h3>
+        <p>
+            Découvrez les startups françaises qui redéfinissent l'innovation technologique. Parmi les plus grandes réussites figurent des entreprises comme BlaBlaCar et Doctolib, qui facilitent la mobilité et l'accès aux soins de santé.
+        </p>
+        <img src="https://www.blablacar.com/images/logo_bblcar.svg" alt="BlaBlaCar" width="200">
+    </section>
+
+    <footer>
+        <div>
+            <h2>Équipe</h2>
+            <ul>
+                <li>Aditi Ethiraj</li>
+                <li>Nandhini R</li>
+                <li>Janani R</li>
+                <li>Nehal Agarwal</li>
+                <li>Ayoshri Dutta</li>
+                <li>Saundarya Singh</li>
+            </ul>
+        </div>
+    </footer>
+
+</main>
+
+<script>
+    // Track the current content box
+    let openedBoxes = [];
+
+    // Function to toggle the visibility of the content boxes
+    function toggleTextBox(index) {
+        const contentBox = document.getElementById(`content-${index}`);
+        
+        // If the box is already visible, hide it
+        if (openedBoxes.includes(index)) {
+            contentBox.style.display = "none";
+            openedBoxes = openedBoxes.filter(i => i !== index);
+        } else {
+            // If the box isn't visible, show it and place it between
+            openedBoxes.push(index);
+            contentBox.style.display = "block";
+
+            // Dynamically insert content box between sections
+            const nextSection = document.querySelectorAll('.blue-box')[index + 1];
+            if (nextSection) {
+                nextSection.insertAdjacentElement('beforebegin', contentBox);
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
