@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Times New Roman', sans-serif;
-            background-color: #c70039;
+            background: linear-gradient(135deg, #f3e5f5, #c70039); /* Subtle gradient background */
             color: #ffffff;
             line-height: 1.6;
             padding: 20px;
@@ -26,10 +26,12 @@
             padding: 20px;
             text-align: center;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Header shadow for depth */
         }
 
         header h1 {
             font-size: 2.5rem;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow for elegance */
         }
 
         section {
@@ -42,6 +44,7 @@
             margin-bottom: 10px;
             border-bottom: 2px solid #0063B1;
             display: inline-block;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for better visibility */
         }
 
         p {
@@ -50,10 +53,10 @@
         }
 
         .founder, .history, .industry, .more-info {
-            background-color: #1b4f72;
+            background-color: rgba(27, 79, 114, 0.9); /* Slightly transparent blue */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
             margin-bottom: 20px;
         }
 
@@ -61,11 +64,11 @@
             text-align: center;
             padding: 10px;
             font-size: 0.9rem;
-            color: #555;
+            color: #eeeeee; /* Lightened footer text for better contrast */
         }
 
         footer a {
-            color: #fff;
+            color: #ffd700; /* Golden link color for elegance */
             text-decoration: none;
         }
 
@@ -73,43 +76,47 @@
             text-decoration: underline;
         }
 
-    </style>
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Ankama(Roubaix)</h1>
+    <h1>Ankama (Roubaix)</h1>
     <p></p>
 </header>
 
 <section class="founder">
     <h2>Fondateur</h2>
-    <p>Anthony Roux</p>
-    <br>
-    <p>Anthony Roux, également connu sous le pseudonyme Tot, est l’un des cofondateurs d’Ankama, une société française spécialisée dans les jeux vidéo, l’animation et l’édition. Il est principalement connu pour avoir créé Dofus et Wakfu, des univers riches et immersifs. Passionné de narration, il a également contribué à des projets d’animation, renforçant la popularité d’Ankama à l’international.</p>
-    
+    <div style="overflow: hidden;">
+        <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Tot-IMG_0166.JPG/520px-Tot-IMG_0166.JPG" 
+            alt="Anthony Roux" 
+            style="width: 150px; float: right; margin-left: 20px; border-radius: 10px;">
+        <p><b>Anthony Roux</b></p>
+        <p>Anthony Roux, également connu sous le pseudonyme Tot, est l’un des cofondateurs d’Ankama, une société française spécialisée dans les jeux vidéo, l’animation et l’édition. Il est principalement connu pour avoir créé Dofus et Wakfu, des univers riches et immersifs. Passionné de narration, il a également contribué à des projets d’animation, renforçant la popularité d’Ankama à l’international.</p>
+    </div>
 </section>
 
 <section class="history">
     <h2>Histoire</h2>
     <p>Fondée en 2001 par Anthony Roux, Camille Chafer et Emmanuel Darras. Ankama a commencé comme un petit studio de jeu et a connu le succès avec son MMORPG phare *Dofus* en 2004.
-- L'entreprise s'est diversifiée dans le multimédia, créant des séries animées (Wakfu), des bandes dessinées et des jeux de société, formant ainsi un écosystème transmédia complet.
-</p>
+    - L'entreprise s'est diversifiée dans le multimédia, créant des séries animées (Wakfu), des bandes dessinées et des jeux de société, formant ainsi un écosystème transmédia complet.
+    </p>
 </section>
 
 <section class="industry">
     <h2>Récentes Position</h2>
     <p>Ankama reste un acteur important du jeu et du multimédia. Ses jeux, notamment *Dofus* et *Wakfu*, comptent des millions de joueurs dans le monde. Ankama continue d'innover avec de nouveaux jeux comme *Waven* (2023) tout en élargissant sa narration transmédia en animation et en bande dessinée.
-</p>
+    </p>
 </section>
 
 <section class="more-info">
     <h2>D'autres Informations</h2>
-    <p>L'entreprise s'est diversifiée dans le multimédia, créant des séries animées, des bandes dessinées et des jeux de société, formant ainsi un écosystème transmédia complet.Ses jeux, notamment *Dofus* et *Wakfu*, comptent des millions de joueurs dans le monde.</p>
+    <p>L'entreprise s'est diversifiée dans le multimédia, créant des séries animées, des bandes dessinées et des jeux de société, formant ainsi un écosystème transmédia complet. Ses jeux, notamment *Dofus* et *Wakfu*, comptent des millions de joueurs dans le monde.</p>
 </section>
 
 <footer>
-    <p>&copy; 2024 Ankama- <a href="https://www.ankama.com/en">Visit Official Website</a></p>
+    <p>&copy; 2024 Ankama - <a href="https://www.ankama.com/en">Visit Official Website</a></p>
 </footer>
 
 </body>
