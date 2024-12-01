@@ -315,10 +315,12 @@
         }
         .timeline img {
             float: right;
-            width: 150px;
+            width: 150px; /* You can adjust the width as needed */
             height: auto;
             margin-left: 20px;
             border-radius: 8px;
+            max-width: 100%; /* Ensures image doesn't overflow the container */
+            box-sizing: border-box; /* Ensures padding doesn't cause overflow */
         }
     </style>
     <body>
